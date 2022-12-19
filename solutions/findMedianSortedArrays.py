@@ -35,9 +35,6 @@ class Solution:
                 else :
                     start = partitionX + 1
 
-s = Solution()
-print ("Solution is ", s.findMedianSortedArrays([1,2, 3], [4, 5]))
-
 
                 
 
