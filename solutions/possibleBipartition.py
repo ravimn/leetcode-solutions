@@ -25,6 +25,7 @@ ai < bi
 All the pairs of dislikes are unique.
 
 Approach:
+Bipartite Graph, BFS Traversal
 """
 
 class Solution:
@@ -44,27 +45,17 @@ class Solution:
         for x in range(n):
             i = x + 1
 
-            iIndex = self.determineGroupIndex(i, dislikeGraph, groupMap)
-            groupMap[i] = iIndex
+            iGroupId = self.determineGroup(i, dislikeGraph, groupMap)
+            groupMap[i] = iGroupId
 
-
-            if not self.partitionNode(i, iIndex, dislikeGraph[i], groupMap, visitedMap):
+            if not self.partitionNode(i, iGroupId, dislikeGraph[i], groupMap, visitedMap):
                 return False
             
-            dislikeIndex = Solution.GROUPINDEX * iIndex
-            if not dislikeGraph[i]:
-                continue
-
-            for y in dislikeGraph[i]:
-                if not self.partitionNode(y, dislikeIndex, dislikeGraph[y], groupMap, visitedMap):
-                    return False
-            
-            if Solution.DEBUG: print("[", i, "] - GroupMap : ", groupMap)
-        
+            if Solution.DEBUG: print("[", i, "] - GroupMap : ", groupMap)        
         
         return True
 
-    def determineGroupIndex(self, i: int, dislikeGraph: dict, groupMap: dict) -> int:
+    def determineGroup(self, i: int, dislikeGraph: dict, groupMap: dict) -> int:
         """
         For determining the Group Index of a node, run a Breadth First Search of the Node and run it down its children
         We have to check if a node is already in the groupMap and depending on the depth multiply it with 1 or -1 to return
@@ -99,7 +90,7 @@ class Solution:
                         
                         return groupIndex
         
-        if Solution.DEBUG: print("[", i ,"] Group index not found by traversing graph.  Returning default value")
+        if Solution.DEBUG: print("[", i ,"] Group index not found by traversing graph.  Returning default value -1")
         return Solution.GROUPINDEX
 
 
