@@ -28,7 +28,7 @@ class ListNode:
         s = "[" + str(self.val)
         nextL = self.next
         while nextL:
-            s = s + "," + str(nextL.val)
+            s = s + ", " + str(nextL.val)
             nextL = nextL.next
         s = s + "]"
         return s

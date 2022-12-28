@@ -8,5 +8,5 @@ class TestMergeKLists(unittest.TestCase):
 
     def test_mergeKLists_test1(self):
         inlist = [ListNode.from_intList([1,3,5]), ListNode.from_intList([2,4,6])]
-        outlist = [1,2,3,4,5,6]
-        self.assertEquals(self.Solution.mergeKListsWithHeapQ(inlist), outlist)
+        outlist = [1, 2, 3, 4, 5, 6]
+        self.assertEquals(str(self.Solution.mergeKListsWithHeapQ(inlist)), str(ListNode.from_intList(outlist)))

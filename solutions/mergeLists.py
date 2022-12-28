@@ -23,7 +23,7 @@ The number of nodes in both lists is in the range [0, 50].
 Both list1 and list2 are sorted in non-decreasing order. 
 """
 from typing import Optional
-from ListNode import ListNode
+from solutions.ListNode import ListNode
 
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
