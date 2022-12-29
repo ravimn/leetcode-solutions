@@ -62,6 +62,3 @@ class Solution:
             return (cn - ci) + self.romanToInt(s[2:])
         else :
             return ci + self.romanToInt(s[1:])
-
-s = Solution()
-print(s.romanToInt("MCMXCIV"))
