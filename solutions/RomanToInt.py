@@ -53,10 +53,10 @@ class Solution:
         if (l == 0):
             return 0
         if ( l == 1 ):
-            return rd.get(s)
+            return Solution.rd.get(s)
         
-        ci = rd.get(s[0])
-        cn = rd.get(s[1])
+        ci = Solution.rd.get(s[0])
+        cn = Solution.rd.get(s[1])
         
         if (ci < cn) :
             return (cn - ci) + self.romanToInt(s[2:])
@@ -64,4 +64,4 @@ class Solution:
             return ci + self.romanToInt(s[1:])
 
 s = Solution()
-print(s.romanToInt("MDCXCV"))
+print(s.romanToInt("MCMXCIV"))
