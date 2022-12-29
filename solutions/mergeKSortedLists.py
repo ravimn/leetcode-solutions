@@ -33,7 +33,7 @@ class Solution:
         heapq.heapify(mylist)
         mergeList = []
 
-        while(mylist):
+        while mylist:
             (val, listindex) = heapq.heappop(mylist)
             mergeList.append(val)
             lists[listindex] = lists[listindex].next
