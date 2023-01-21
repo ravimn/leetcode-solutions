@@ -1,6 +1,6 @@
 import heapq
 from typing import Optional
-from solutions.ListNode import ListNode
+from solutions.vo.ListNode import ListNode
 from solutions.mergeLists import Solution as mergeList
 
 class Solution:

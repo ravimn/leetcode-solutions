@@ -1,4 +1,4 @@
-from solutions.ListNode import ListNode
+from solutions.vo.ListNode import ListNode
 from solutions.mergeKSortedLists import Solution
 import pytest
 

@@ -1,6 +1,6 @@
 import unittest
 from solutions.mergeKSortedLists import Solution
-from solutions.ListNode import ListNode
+from solutions.vo.ListNode import ListNode
 
 class TestMergeKLists(unittest.TestCase):
     def setUp(self) -> None:
