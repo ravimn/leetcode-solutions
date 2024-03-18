@@ -33,7 +33,7 @@ class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         r = []
         hashMap = {nums[i]: i for i in range(0, len(nums))}
-        print(hashMap)
+
         for i in range(0, len(nums)):
             y = target - nums[i]
             if (y in hashMap and y != nums[i]):
@@ -41,6 +41,7 @@ class Solution:
                 r.append(i)
                 r.append(hashMap.get(target - nums[i]))
                 return r
+ 
         if len(r) == 0:
             x = target / 2
             for i in range(0, len(nums)):
@@ -48,3 +49,6 @@ class Solution:
                     r.append(i)
                     if (len(r) == 2):
                         return r
+        
+        #Return empty String
+        return r
