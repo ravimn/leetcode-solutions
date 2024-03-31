@@ -23,4 +23,16 @@ class Solution:
                 if parseQueue.pop() != c: return False
         
         return len(parseQueue) == 0
+    
+    def isValidParanthesis(self, s:str) -> bool:
+        if s is None:
+            return True
+        if len(s.strip()) == 0:
+            return True
+        
+        left = 0; right = len(s) - 1
+        while left < right:
+            if s[left] != s[right]:
+                return False
+
 

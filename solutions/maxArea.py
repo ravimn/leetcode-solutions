@@ -23,7 +23,7 @@ class Solution:
         area = 0
         while x < y:
             new_area = min(height[x], height[y]) * (y - x)
-            area = new_area if new_area > area else area
+            area = max(new_area, area)
             if (height[x] > height[y]) :
                 #ht(x) > ht(y) - Move y towards x
                 y -= 1

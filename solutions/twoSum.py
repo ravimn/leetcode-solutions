@@ -52,3 +52,19 @@ class Solution:
         
         #Return empty String
         return r
+    def twoSumSortedArray(self, nums:list[int], target:int) -> list[int]:
+        result = []
+        x = 0; y = len(nums) - 1
+
+        while x < y:
+            sum_xy = nums[x] + nums[y]
+            if sum_xy == target:
+                result.append(x+1)
+                result.append(y+1)
+                return result
+            
+            if sum_xy > target:
+                y -= 1
+            else:
+                x += 1
+        return result

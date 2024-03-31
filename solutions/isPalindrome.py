@@ -31,10 +31,30 @@ s consists only of printable ASCII characters.
 
 class Solution:
     def isPalindrome(self, s:str) -> bool:
+        s = self.cleanString(s)
+
+        if s == '':
+            return True
+        
+        left = 0
+        right = len(s) - 1
+
+        while left < right:
+            if s[left] != s[right]:
+                return False
+            left += 1
+            right -= 1
+                
+        return True
+    
+    def cleanString(self, s:str) -> str:
+        if s == '':
+            return ''
+        
         new_s = ''
         for c in s:
             if not c.isnumeric() and not c.isalpha():
                 continue
             new_s += c.lower()
-            
-        return new_s == new_s[::-1]
+        
+        return new_s

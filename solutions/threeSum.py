@@ -71,6 +71,26 @@ class Solution:
         finalist.sort()
         return list(finalist for finalist, _ in itertools.groupby(finalist))
 
+    def threeSumWithTwoSumTwoPointer(self, nums:list[int]) -> list[list[int]]:
+        nums.sort()
+        result = []
+        for index, n in enumerate(nums):
+            x = index + 1
+            y = len(nums) - 1
+            while x < y:                
+                sum_nxy = n + nums[x] + nums[y]
+                if sum_nxy < 0:
+                    x += 1
+                    while nums[x] == nums[x-1]:
+                        x += 1
+                elif sum_nxy > 0:
+                    y -= 1
+                else:
+                    result.append([n, nums[x], nums[y]])
+                    break
+        return result
+            
+
 
 s = Solution()
 print(s.threeSumUsingTwoSum([-1, 0, 1, 2, -1, -4]))
