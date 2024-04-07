@@ -62,7 +62,7 @@ class Solution:
             return int(token1) - int(token2)
         elif op == '*':
             return int(token1) * int(token2)
-        else: #default is / - Division always truncates towards 0 - therefore using '//'
+        else: 
             return int(int(token1) / int(token2))
     
 if __name__ == "__main__":
