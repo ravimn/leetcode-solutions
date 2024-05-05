@@ -13,7 +13,7 @@ class ListNode:
     @classmethod
     def from_intList(cls, lists:list[int]):
         if not lists:
-            return cls()
+            return None
         
         first = temp = cls()
         for n in lists:
