@@ -1,7 +1,7 @@
 import heapq
 from typing import Optional
-from solutions.vo.ListNode import ListNode
-from solutions.mergeLists import Solution as mergeList
+from vo.ListNode import ListNode
+from mergeLists import Solution as mergeList
 
 class Solution:
     def mergeKLists(self, lists: list[Optional[ListNode]]) -> Optional[ListNode]:

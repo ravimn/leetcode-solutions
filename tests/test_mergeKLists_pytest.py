@@ -1,5 +1,5 @@
-from solutions.vo.ListNode import ListNode
-from solutions.mergeKSortedLists import Solution
+from solutions.linkedlist.vo.ListNode import ListNode
+from solutions.linkedlist.mergeKSortedLists import Solution
 import pytest
 
 @pytest.fixture
