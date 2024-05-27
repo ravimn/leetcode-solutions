@@ -1,5 +1,5 @@
 import pytest
-from solutions.validParanthesis import Solution as validParaththesis
+from solutions.stack.validParanthesis import Solution as validParaththesis
 
 class TestValidParaththesis:
     @pytest.mark.parametrize("text, expected", [
