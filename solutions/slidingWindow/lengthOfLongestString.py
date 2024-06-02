@@ -35,7 +35,7 @@ class Solution:
 
         charMap = {}
         length = 0
-        longest = length
+        longest = 0
 
         for i in s:
             if i in charMap:
