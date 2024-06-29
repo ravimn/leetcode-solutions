@@ -22,7 +22,7 @@ n == matrix[i].length
 -104 <= matrix[i][j], target <= 104
 
 """
-from binarySearch import Solution as binarySearch
+from solutions.binarySearch.binarySearch import Solution as binarySearch
 class Solution:
 
     def searchMatrix(self, matrix:list[list[int]], target: int) -> bool:

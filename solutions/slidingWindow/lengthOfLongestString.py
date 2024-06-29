@@ -26,6 +26,9 @@ Constraints:
 0 <= s.length <= 5 * (10**4)
 s consists of English letters, digits, symbols and spaces.
 """
+import logging
+
+logger = logging.getLogger(__name__)
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -44,13 +47,17 @@ class Solution:
 
                 #if debug : 
                 #    print ("Found a match.  Re-adjusting lenghts. -> ", i)
+                logger.debug("Found a match.  Re-adjusting lenghts. -> ", i)
                 for key in list(charMap.keys()):
                     if (charMap[key] <= matchIndex):
                         #if debug: 
                         #    print ("Deleting ", key)
+                        logging.debug("Deleting ", key)
                         del charMap[key]
                     else:
                         charMap[key] = charMap[key] - matchIndex
+                        logger.debug(key, '->', charMap[key])
+                        logger.debug('charMap is ', charMap)
                         #if debug: 
                         #    print (key, '->', charMap[key])
                         #    print (charMap)
@@ -58,16 +65,36 @@ class Solution:
                 length = length - matchIndex + 1
                 
                 charMap[i] = length
-                #if debug:
-                #    print (i, '->', length)
-                #    print (charMap)
+                logger.debug(i, '->', length)
+                logger.debug('charMap is ', charMap)
             else:
                 charMap[i] = length = length + 1
-                #if debug:
-                #    print (i, '-->', charMap[i]) 
-                #    print (charMap) 
+                logger.debug(i, '->', length)
+                logger.debug('charMap is ', charMap)
 
             longest = length if longest < length else longest
 
         return longest
+
+if __name__ == '__main__':
+# Create a logger
+    logger = logging.getLogger('example_logger')
+    logger.setLevel(logging.DEBUG)  # Set the base logging level for the logger
+
+    # Create a console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)  # Set the logging level for the handler
+
+    # Create a formatter and set it for the handler
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(formatter)
+
+    # Add the handler to the logger
+    logger.addHandler(console_handler)
+
+    s = Solution()
+    string = "abcabcbb"
+    longest = s.lengthOfLongestSubstring(string)
+    logging.info("Longest substring for string {} is {}".format(string, longest))
+
 
